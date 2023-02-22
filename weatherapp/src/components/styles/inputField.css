@@ -1,0 +1,35 @@
+.input_form{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input_box{
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    z-index: 1;
+    font-size: 18px;
+}
+.submit_button{
+    position: absolute;
+    right: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: rgb(179, 0, 255);
+    z-index: 2;
+    border: none;
+    transition: 0.2s all;
+}
+.submit_button:hover{
+    background-color: rgb(179, 0, 210);
+}
+
+.submit_button:active{
+    transform: scale(0.5);
+}
