@@ -9,7 +9,7 @@ const AllRoutes:React.FC=()=>{
         <Routes>
             <Route path="/" element={<InputField />} />
             <Route path="/:country" element={<CountryInfo />} />
-            <Route path="/ind" element={<div>Hii</div>} />
+            <Route path="/" element={<div>Hii</div>} />
         </Routes>
     )
 }
