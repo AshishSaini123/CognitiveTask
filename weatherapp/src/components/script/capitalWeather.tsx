@@ -1,6 +1,7 @@
 
 import React ,{useEffect, useState}from "react";
 import { useParams } from "react-router-dom";
+import "../styles/capitalWeather.css"
 
 const CapitalWeather:React.FC=()=>{
     const [data,setData]=useState<obj>()
@@ -33,10 +34,10 @@ const CapitalWeather:React.FC=()=>{
         <div>
             {data?.current!==undefined?<div className="container">
                 <h2>{capital.capital?.toUpperCase()}</h2>
-                <p className="temp">{data.current.temperature}</p>
+                <p className="temp">{`Current temperature is ${data.current.temperature} °C`}</p>
                 <p className="weather_icon"><img src={data.current.weather_icons[0]}/></p>
-                <p className="wind_speed">{data.current.wind_speed}</p>
-                <p className="preci">{data.current.precip}</p>
+                <p className="wind_speed">{`Wind speed is ${data.current.wind_speed} KM/H`}</p>
+                <p className="preci">{`Precipiation is ${data.current.precip}`}</p>
             </div>:<>...loading</>}
         </div>
     )

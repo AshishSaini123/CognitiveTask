@@ -1,0 +1,17 @@
+
+.temp,.wind_speed ,.preci{
+    padding: 20px;
+    background-color: rgb(127, 236, 255);
+    font-weight: 600;
+    
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 0 10px 10px blueviolet;
+    border-radius: 30px;
+}
+.weather_icon >img{
+    border-radius: 50%;
+    margin-top: 20px;
+}
+

@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/countryInfo.css"
 const CountryInfo:React.FC=()=>{
 
+    const nav=useNavigate();
     interface fla{
         png:string,
         svg:string,
@@ -16,16 +17,18 @@ const CountryInfo:React.FC=()=>{
         
     }
     
+    
     const [data,setData]=useState<obj[]>([])
     let country=useParams();
     
+    const handleClick:()=>void=()=>{
+        nav(`/map/${data[0].capital[0]}`)
+    }
     const fetchApi:()=>void=async()=>{
         console.log('inside fetch')
         fetch(`https://restcountries.com/v3.1/name/${country.country}`)
         .then(res=>res.json()).then(data=>{
             setData(data)
-            console.log(data);
-            console.log(data[0].flag.svg)
         });
     }
     useEffect(() => {
@@ -46,7 +49,7 @@ const CountryInfo:React.FC=()=>{
                 <img src={`${data[0].flags.svg}`} alt={data[0].flags.alt} />
             </span>
             </div>:<>...loading</>}
-            {data.length>0?<button className="capital_btn">{`${data[0].capital[0]} weather`}</button>:null}
+            {data.length>0?<button className="capital_btn" onClick={handleClick}>{`${data[0].capital[0]} weather`}</button>:null}
         </div>
     )
 }
