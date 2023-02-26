@@ -22,9 +22,11 @@ const CapitalWeather:React.FC=()=>{
 
     const fetchApi:()=>void=async()=>{
         console.log('inside fetch')
-        fetch(`http://api.weatherstack.com/current?access_key=55759d2c7af58cf4bb14865c8b2aebd9&query=${capital.capital}`)
+        fetch(`http://api.weatherstack.com/current?access_key=99da4359904717756abb304b69b7675c&query=${capital.capital}`)
         .then(res=>res.json()).then(dat=>{
+            console.log("dat",dat);
             setData(dat)
+            console.log("data",data)
         });
     }
     useEffect(() => {
